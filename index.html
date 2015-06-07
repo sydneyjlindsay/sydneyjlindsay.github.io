@@ -1,9 +1,183 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title>Chat</title>
+     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body>
-	<header>Portfoli</header>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Chatroom</a>
+    </div>
+
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active" id="leaderboard-nav"><a href="#">Leaderboards <span class="sr-only">(current)</span></a></li>
+        <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Room <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#main">Main</a></li>
+            <li><a href="#room-2">Room 1</a></li>
+            <li><a href="#room-1">Room 2</a></li>
+          </ul>
+        </li> -->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container" id="main">
+  <div class="jumbotron text-center">
+    <h1>Welcome!</h1>
+    <p class="lead">To start chatting, please enter a username</p>
+    <p><a class="btn btn-large btn-success" data-toggle="modal" data-target="#myModal">Get Started</a></p>
+  </div>
+</div> <!-- /container -->
+
+
+
+  <!-- <div class="col-sm-3 col-md-3 col-md-offset-3">Username
+    <input type="text" class="form-control" id="usernameBox">
+  </div>
+</div>
+ -->
+   <!--  <div>Username
+         <input type="text" id="usernameBox">
+    </div>
+
+     <section>
+         <div id="chat"></div>
+     </section>
+     
+
+   <form id="input-form">
+        <input type="text" id="messageBox">
+        <button id="my-button">Send Message</button>
+    </form>
+    -->
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Username</h4>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-control" id="usernameBox">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Save</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+    <section class="page" id="chatRoom"> 
+    <div class="container-fluid">
+    <div class="page-header">
+     <!-- <h4 class="text-muted">Current Room:</h4> -->
+    <h3 class="main-room">Main Room</h3>
+    <h3 class="room-one">Room One</h3>
+    <h3 class="room-two">Room Two</h3>
+    <!-- <select class="form-control" id="change-room">
+        <option>Select Room</option>
+        <option value="main-room">Main Room</option>
+        <option value="room-one">Room One</option>
+        <option value="room-two">Room Two</option>
+    </select> -->
+</div>
+    <div class="row">
+        <div class="col-sm-3 col-md-3 col-md-offset-1">
+            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+        Change User
+            </button>
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+<!-- Modal -->
+      
+        <div class="container">
+        <div class="row main-room">
+                <div class="well">
+                    <div id="chat"></div>
+                </div>
+            </div>
+            <div class="row room-one">
+                <div class="well">
+                    <div id="chat"></div>
+                </div>
+            </div>
+            <div class="row room-two">
+                <div class="well">
+                    <div id="chat"></div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <form id="message-text">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="messageBox" placeholder="Message...">
+                        <span class="input-group-btn">
+                        <button class="btn btn-warning">Send</button>
+                        </span>
+                    </div>
+                </form>
+            </div> 
+        </div>
+        </div>
+        
+    </section>
+
+    <div class="container-fluid" id="leaderboard">
+    <hr>
+        <div class="col-md-3 col-md-offset-3">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h3>Top Users</h3></div>
+            <div class="panel-body">
+                <div id="top-users"> 
+                    <div id="leaders"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <div class="panel panel-default">
+            <div class="panel-heading"><h3>Top Rooms</h3></div>
+            <div class="panel-body">
+                <div id="top-rooms">  
+                    <div id="room-leader"> </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="bower_components/backbone/backbone-min.js"></script>
+    <script type="text/javascript" src="scripts/main.js"></script>
 </body>
 </html>
+
+
+
+
