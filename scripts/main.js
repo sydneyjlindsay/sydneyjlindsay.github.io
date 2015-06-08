@@ -66,6 +66,14 @@ function start(e) {
 		);
 	}
 
+	function getRecentUsers() {
+		$.get(
+			'https://agile-plateau-2979.herokuapp.com/stats/top_ten_users',
+			onRecentUsers,
+			'json'
+		);
+	}
+
 	function getTopRooms() {
 		$.get(
 			'https://agile-plateau-2979.herokuapp.com/stats/top_ten_rooms',
@@ -80,7 +88,7 @@ function start(e) {
 		var htmlString = ''; 
 		for(var i=0; i<messageList.length; i++) {
 			var message = messageList[i];
-			if(message.name !== ('') && message.hasOwnProperty('name') && message.hasOwnProperty('text')) {
+			if(message.name !== ('') && message.text !== ('') && message.hasOwnProperty('name') && message.hasOwnProperty('text')) {
 				htmlString += '<div>'+message.text+'<p>'+'     '+message.name+', ' + moment(message.created_at).startOf('minute').fromNow()+'</p></div>';
 			}
 			
@@ -97,6 +105,16 @@ function start(e) {
 		}
 
 		$('#leaders').html(htmlString);
+	}	
+
+	function onRecentUsers(leaderboardList) {
+		var htmlString = '';
+		for(var i=0; i<leaderboardList.length; i++) {
+			var recentUsers = leaderboardList[i];
+			htmlString += '<div>'+'<h4>'+recentUsers.name+'</h4></div>';
+		}
+
+		$('#recent-users').html(htmlString);
 	}	
 
 	function onTopRooms(leaderboardList) {
@@ -118,6 +136,8 @@ function start(e) {
 	getTopUsers();
 
 	getTopRooms();
+
+	getRecentUsers();
 }
 
 

@@ -1,3 +1,23 @@
+#leaderboard > div > div > div.panel-heading {
+  background-color: #EBFBED;
+}
+
+h3 {
+ font-family: 'Questrial', sans-serif;
+ text-shadow: 3px 3px 13px rgba(150, 150, 152, 0.95);
+ font-weight: bold;
+ font-size: 3em;
+}
+
+#main > div > h1 {
+  font-family: 'Pacifico', cursive;
+  text-shadow: 3px 3px 13px rgba(150, 150, 152, 0.95);
+}
+
+button {
+  font-family: 'Roboto', sans-serif;
+}
+
 #message-text > div > span > button {
     height: 50px;
 }
@@ -13,6 +33,7 @@
 #chat {
     height: 300px;
     overflow: scroll;
+    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -21,13 +42,16 @@
 }
 
 #chat div {
-    margin-bottom: 10px;
+    width: auto;
+    min-width: 20%;
+    margin-right: 60%;
+    margin-bottom: 7px;
     font-size: 15px;
     background-color: #158FFE;
     border-radius: 30px;
     color: white;
-    padding-top: 10px;
-    padding-bottom: 10px; 
+    padding-top: 7px;
+    padding-bottom: 7px; 
     padding-left: 20px;
     padding-right: 15px;
 
@@ -46,6 +70,24 @@
     font-style: italic;
     margin: 0;
     padding: 0;
+}
+
+#leaders > div > div {
+  float: right;
+  background-color: #158FFE;
+  font-size: 12;
+}
+
+#recent-users > div {
+  margin: 1em;
+}
+
+#leaders > div {
+  margin: 1em;
+}
+
+#room-leaders > div {
+  margin: 1em;
 }
 
 
