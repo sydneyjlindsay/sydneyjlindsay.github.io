@@ -113,7 +113,7 @@ function start(e) {
 		var htmlString = '';
 		for(var i=0; i<leaderboardList.length; i++) {
 			var topUsers = leaderboardList[i];
-			htmlString += '<div>'+'<h4>'+topUsers.name+'</h4>'+' '+'<div class="badge">'+topUsers.count+'</div>'+'</div>';
+			htmlString += '<li class="list-group-item"><span class="badge">'+topUsers.count+'</span>'+topUsers.name+'</li>';
 		}
 
 		$('#leaders').html(htmlString);
