@@ -25,6 +25,7 @@ function start(e) {
 		$('#main').hide();
 		$('#chatRoom').hide();
 		$('#leaderboard').show();
+		$('.navbar-right a').show();
 	});
 
 	 $('.navbar-header a').on('click', function() {
@@ -34,6 +35,7 @@ function start(e) {
 		$('#leaderboard').hide();
 		$('.room-one').hide(); 
 		$('.room-two').hide(); 
+		$('.navbar-right a').show();
 	 });
 
 	 $('.navbar-right a').on('click', function() {
@@ -78,7 +80,7 @@ function start(e) {
 
 	function getRecentUsers() {
 		$.get(
-			'https://agile-plateau-2979.herokuapp.com/stats/recent_users',
+			'https://agile-plateau-2979.herokuapp.com/recent_users',
 			onRecentUsers,
 			'json'
 		);
