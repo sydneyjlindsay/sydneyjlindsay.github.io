@@ -9,6 +9,7 @@ $(document).on('ready', start);
 	
 function start(e) {
 
+	$('.navbar-right a').hide();
 	$('#chatRoom').hide();
 	$('#leaderboard').hide();
 	
@@ -17,6 +18,7 @@ function start(e) {
 		$('#chatRoom').show();
 		$('.room-one').hide(); 
 		$('.room-two').hide(); 
+		$('.navbar-right a').show();
 	});
 
 	$('#leaderboard-nav').on('click', function(){
@@ -29,6 +31,14 @@ function start(e) {
 	 	console.log('clickclicky');
 	 	$('#main').hide();
 		$('#chatRoom').show();
+		$('#leaderboard').hide();
+		$('.room-one').hide(); 
+		$('.room-two').hide(); 
+	 });
+
+	 $('.navbar-right a').on('click', function() {
+	 	$('#main').show();
+		$('#chatRoom').hide();
 		$('#leaderboard').hide();
 		$('.room-one').hide(); 
 		$('.room-two').hide(); 
@@ -68,7 +78,7 @@ function start(e) {
 
 	function getRecentUsers() {
 		$.get(
-			'https://agile-plateau-2979.herokuapp.com/stats/top_ten_users',
+			'https://agile-plateau-2979.herokuapp.com/stats/recent_users',
 			onRecentUsers,
 			'json'
 		);

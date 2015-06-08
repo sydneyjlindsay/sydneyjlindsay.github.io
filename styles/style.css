@@ -9,9 +9,23 @@ h3 {
  font-size: 3em;
 }
 
-#main > div > h1 {
+h1 span {
   font-family: 'Pacifico', cursive;
+  font-size: 1.25em;
+}
+
+#main > div > h1 {
+   font-family: 'Roboto', sans-serif;
   text-shadow: 3px 3px 13px rgba(150, 150, 152, 0.95);
+  margin-bottom: 0.25em;
+}
+
+#bs-example-navbar-collapse-1 > ul.nav.navbar-nav.navbar-right > li > a {
+  font-family: 'Pacifico', cursive;
+}
+
+#main > div > p.lead {
+  font-family: 'Roboto', sans-serif;
 }
 
 button {
